@@ -1,0 +1,188 @@
+{
+  "website_url": "http://$|_HOSTNAME_|$/zapwire",
+
+  "javascript_enabled": true,
+  "stylesheet_enabled": true,
+
+  "project_info": {
+    "logo_src": "/src/assets/images/z5.png",
+    "logos" : {
+      "z1" : "/src/assets/images/z1.png",
+      "z2" : "/src/assets/images/z2.png",
+      "z3" : "/src/assets/images/z3.png",
+      "z4" : "/src/assets/images/z4.png",
+      "z5" : "/src/assets/images/z5.png",
+      "z6" : "/src/assets/images/z6.png"
+    },
+    "favicon_src": "/src/assets/images/zapwire_favicon.png",
+    "cdn_url" : "http://$|_HOSTNAME_|$/zapwire",
+    "author": "Ese curtis",
+    "version": "1.0.0",
+    "app_name": "zapwire-ws",
+    "dashboard_app_name": "z-board",
+    "admin_app_name": "z-Admin",
+    "description": "ZapWire is a simple, easy to use, and powerful tool for creating and managing your own wireframes.",
+    "api-authKey": "e5g7E7Y8w5",
+    "support_email": "support@zapwire.esecurtis.com",
+    "noreply_email": "no-reply@zapwire.esecurtis.com",
+    "activation_link_request_due_time": "1",
+    "visible": [
+      "app_name",
+      "description",
+      "author",
+      "activation_link_request_due_time"
+    ]
+  },
+  "database": {
+    "host": "localhost",
+    "username": "root",
+    "password": "",
+    "name": "zapwire"
+  },
+  "views": {
+    "init": "landing",
+    "landing": {
+      "source": "landing/index.php"
+    },
+    "dashboard": {
+      "source": "/dashboard/home.php",
+
+      "auth": [
+        {
+          "pass": "/auth/user_is_logged_in.php",
+          "redirect": "/auth/unauthorized.php"
+        }
+      ],
+
+      "views": {
+        "home": {
+          "source": "/dashboard/home.php"
+        },
+        "messages": {
+          "source": "/dashboard/messages.php"
+        },
+        "manage-channels": {
+          "source": "/dashboard/manage_channels.php",
+          "not_path": true
+        },
+        "channels": {
+          "source": "/dashboard/channels.php",
+          "views": {
+            "log": {
+              "source": "/dashboard/channels/log.php",
+              "not_path": true
+            },
+            "logs": {
+              "source": "/dashboard/channels/logs.php",
+              "not_path": true
+            },
+            "gen": {
+              "source": "/dashboard/channels/generate_wire_code.php",
+              "not_path": true
+            },
+            "create": {
+              "source": "/dashboard/channels/create.php",
+              "not_path": true
+            },
+            "edit": {
+              "source": "/dashboard/channels/edit.php",
+              "not_path": true
+            },
+            "delete": {
+              "source": "/dashboard/channels/delete.php",
+              "not_path": true
+            }
+          }
+        },
+        "settings": {
+          "source": "/dashboard/settings/general.php",
+          "views": {
+            "general": {
+              "source": "/dashboard/settings/general.php"
+            },
+            "users": {
+              "source": "/dashboard/settings/users.php"
+            },
+            "permissions": {
+              "source": "/dashboard/settings/permissions.php"
+            },
+            "api": {
+              "source": "/dashboard/settings/api.php"
+            }
+          },
+          "not_path": true
+        },
+        "activation-notice": {
+          "source": "auth/activation_notice.php"
+        },
+        "logout": {
+          "source": "/dashboard/logout.php"
+        }
+      }
+    },
+    "admin-board": {
+      "auth": [
+        {
+          "pass": "/auth/user_is_admin.php",
+          "redirect": "/auth/unauthorized.php"
+        },
+        {
+          "pass": "/auth/user_is_logged_in.php",
+          "redirect": "/auth/unauthorized.php"
+        }
+      ],
+      "source": "/admin/home.php",
+      "views" : {
+        "home": {
+          "source": "/admin/home.php"
+        },
+        "users": {
+          "source": "/admin/users.php",
+          "views": {
+            "update": {
+              "source": "/admin/users/update.php",
+              "not_path": true
+            },
+            "permissions": {
+              "source": "/admin/users/permissions.php",
+              "not_path": true
+            }
+          }
+        },
+        "reports": {
+          "source": "/admin/reports.php"
+        },
+        "message": {
+          "source": "/admin/message.php"
+        }
+      }
+    },
+    "logout": {
+      "source": "/dashboard/logout.php"
+    },
+    "sign-in": {
+      "source": "auth/sign_in.php"
+    },
+    "sign-up": {
+      "source": "auth/sign_up.php"
+    },
+    "password-recovery": {
+      "source": "auth/password_recovery.php"
+    },
+    "password-reset": {
+      "source": "auth/password_reset.php"
+    },
+    "activation": {
+      "source": "auth/activation.php"
+    },
+    "404": {
+      "source": "404.php"
+    },
+    "test": {
+      "source": "test.php"
+    }
+  },
+  "live_channels": {
+    "001": "404"
+  }
+}

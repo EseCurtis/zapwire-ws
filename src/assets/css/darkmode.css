@@ -1,0 +1,124 @@
+:root {
+    --main-bg: #1A1A2E;
+    --card-bg: #16213E;
+    --primary-text-color: #ffffffcc;
+    --secondary-text-color: #ffffff88;
+    --border-color: rgba(255, 255, 255, 0.226);
+}
+
+html {
+    background: var(--theme-def);
+}
+
+body {
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.darkmode {
+    background-color: var(--main-bg);
+    color: #fff;
+}
+
+.darkmode .card {
+    background: var(--card-bg);
+    box-shadow: none;
+}
+
+.darkmode  .fw-semibold {
+    color: var(--primary-text-color);
+}
+
+.darkmode .o-count {
+    color: var(--primary-text-color);
+}
+
+.darkmode .bg-footer-theme {
+    background-color: var(--card-bg) !important;
+}
+
+.darkmode .bg-navbar-theme {
+    background-color: var(--card-bg) !important;
+    box-shadow: none;
+}
+
+.darkmode .dropdown-menu {
+    background-color: var(--card-bg) !important;
+    color: var(--primary-text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+}
+
+.darkmode .dropdown-item {
+    color: var(--primary-text-color);
+}
+
+.darkmode .dropdown-divider {
+    border-color: var(--border-color) !important;
+}
+
+.darkmode .bg-menu-theme {
+    background-color: var(--card-bg) !important;
+}
+
+.darkmode  .menu-text {
+    color: var(--primary-text-color);
+}
+
+.darkmode .menu-item a {
+    color: var(--primary-text-color);
+}
+
+/* cutomise and give the datable selector a material design */
+
+.dataTable-selector {
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    padding: 5px;
+    margin-bottom: 10px;
+    outline:none;
+    border: none;
+}
+
+.dataTable-input {
+    border-radius: 3px;
+    padding: 5px;
+    margin-bottom: 10px;
+    outline:none;
+    border: none;
+}
+
+/* darkmode of the selector */
+
+.darkmode .dataTable-selector {
+    background-color: #1A1A2E;
+    color: #eee;
+    outline:none;
+    border: none;
+}
+
+.darkmode .dataTable-input {
+    background-color: #1A1A2E;
+    color: #fff;
+    border: none;
+}
+
+
+.darkmode td,
+.darkmode th a {
+    color: var(--primary-text-color);
+}
+
+.darkmode thead {
+    border-color: #ffffff20;
+}
+
+.darkmode input {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid var(--border-color);
+}
+
+.darkmode input::placeholder {
+    color: var(--secondary-text-color);
+}

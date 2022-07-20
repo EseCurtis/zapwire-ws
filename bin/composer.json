@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.6",
+        "johnciacia/avataaar": "^1.1"
+    }
+}

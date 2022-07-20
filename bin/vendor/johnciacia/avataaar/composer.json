@@ -1,0 +1,29 @@
+{
+    "name": "johnciacia/avataaar",
+    "version": "1.1.0",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Avataaar\\": "src/",
+            "Johnciacia\\Avataaar\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "John Ciacia",
+            "email": "hi@johnciacia.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Avataaar\\LaravelProvider"
+            ]
+        }
+    }
+}

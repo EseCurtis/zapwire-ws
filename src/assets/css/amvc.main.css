@@ -1,0 +1,87 @@
+input:-webkit-autofill {
+    -webkit-background-clip: none !important;
+}
+
+
+/* badge design on .badger */
+
+.badger {
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff0000;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    line-height: 1.5;
+    min-width: 2.25em;
+    text-decoration: none;
+    text-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
+    border: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+tr {
+    border-color: #ffffff10 !important;
+}
+
+.table > :not(:first-child) {
+    border-color: #ffffff10 !important;
+}
+
+.table {
+    border-color: #ffffff10 !important;
+}
+
+.message-card {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.message-card span {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2em;
+}
+
+.message-content p {
+    margin: 0;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.notif-icon {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #1A1A2E;
+    color: #ffffff70;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5em;
+}
+
