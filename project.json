@@ -38,9 +38,9 @@
   },
   "database-dev" : {
     "host": "localhost",
-    "user": "root",
+    "username": "root",
     "password": "",
-    "database": "zapwire"
+    "name": "zapwire"
   },
   "database": {
     "host": "localhost",

@@ -60,11 +60,15 @@
             $this->project_info  = (array) $amvc_configuration["project_info"];
             $this->reserved      = $reserved;
 
+            
+
             if($this->app_mode == "development"){
                 $this->database      = (array) $amvc_configuration["database-dev"];
                 $this->website_url   = temp_lice($amvc_configuration["website_url-dev"]);
-
+                
             }
+
+            //die($this->database["password"]);
 
             //check if default amvc includes are enabled
             $this->javascript_enabled = $amvc_configuration["javascript_enabled"];
