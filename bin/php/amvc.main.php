@@ -61,8 +61,8 @@
             $this->reserved      = $reserved;
 
             if($this->app_mode == "development"){
-                $this->database      = (array) $amvc_configuration["database_dev"];
-                $this->website_url   = temp_lice($amvc_configuration["website_url_dev"]);
+                $this->database      = (array) $amvc_configuration["database-dev"];
+                $this->website_url   = temp_lice($amvc_configuration["website_url-dev"]);
 
             }
 

@@ -1,6 +1,6 @@
 {
   "website_url": "http://$|_HOSTNAME_|$/zapwire",
-  "website_url_dev": "http://$|_HOSTNAME_|$/zapwire",
+  "website_url-dev": "http://$|_HOSTNAME_|$/zapwire",
 
   "javascript_enabled": true,
   "stylesheet_enabled": true,
