@@ -49,14 +49,22 @@
         function __construct($amvc_configuration)
         {
             global $reserved;
+
+            $this->app_mode = $amvc_configuration["project_info"]["mode"];
             //declare the variables for executuion
             $this->request_url   = @$_REQUEST["url"] ? sanitize_url($_REQUEST["url"]) : "";
-            $this->website_url   = temp_lice($amvc_configuration["website_url"]);
             $this->views         = (array) $amvc_configuration["views"];
             $this->live_channels = (array) $amvc_configuration["live_channels"];
             $this->database      = (array) $amvc_configuration["database"];
+            $this->website_url   = temp_lice($amvc_configuration["website_url"]);
             $this->project_info  = (array) $amvc_configuration["project_info"];
             $this->reserved      = $reserved;
+
+            if($this->app_mode == "development"){
+                $this->database      = (array) $amvc_configuration["database_dev"];
+                $this->website_url   = temp_lice($amvc_configuration["website_url_dev"]);
+
+            }
 
             //check if default amvc includes are enabled
             $this->javascript_enabled = $amvc_configuration["javascript_enabled"];

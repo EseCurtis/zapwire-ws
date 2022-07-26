@@ -1,5 +1,6 @@
 {
   "website_url": "http://$|_HOSTNAME_|$/zapwire",
+  "website_url_dev": "http://$|_HOSTNAME_|$/zapwire",
 
   "javascript_enabled": true,
   "stylesheet_enabled": true,
@@ -27,7 +28,7 @@
     "support_email": "support@zapwire.esecurtis.com",
     "noreply_email": "no-reply@zapwire.esecurtis.com",
     "activation_link_request_due_time": "0.01",
-    "mode": "development",
+    "mode": "production",
     "visible": [
       "app_name",
       "description",
@@ -35,11 +36,17 @@
       "activation_link_request_due_time"
     ]
   },
+  "database-dev" : {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "database": "zapwire"
+  },
   "database": {
     "host": "localhost",
-    "username": "root",
-    "password": "",
-    "name": "zapwire"
+    "username": "esecurti_s",
+    "password": "zapwireisasaas",
+    "name": "esecurti_zapwire"
   },
   "views": {
     "init": "landing",
