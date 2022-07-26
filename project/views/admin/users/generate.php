@@ -4,17 +4,13 @@
     $page = new Render("pages/", "php");
     $widget = new Render("widgets/", "php");
 
-    $user_id = $app->values['3'];
-
     $widget->prop("auth");
 
     $render->prop("header", [
-        "title" => "Set permissions",
+        "title" => "Generate Users",
     ]);
 
-    $render->prop("users/permissions", [
-        "user_id" => $user_id,
-    ]);
+    $render->prop("users/generate");
 
     $render->prop("footer", [
         "page_script" => "

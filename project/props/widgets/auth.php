@@ -1,7 +1,6 @@
 <?php
     $user = new User();
 
-
     switch ($_data['is_auth_page']) {
         case false:
 
@@ -10,10 +9,15 @@
                 exit;
             }
         
-            if(!$user->is_loggedin() || $user->logged_in_user_is_deactivated()) {
+            if(!$user->is_loggedin()) {
                 header("Location: ".$app->url('logout'));
                 exit;
 
+            }
+
+            if($user->logged_in_user_is_deactivated()) {
+                header("Location: ".$app->url('dashboard/disabled-notice'));
+                exit;
             }
 
         break;

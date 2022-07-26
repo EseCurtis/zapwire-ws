@@ -83,6 +83,18 @@
               <p>Users</p>
             </a>
           </li>
+          <li>
+            <a href="<?=$app->url('admin-board/users/generate')?>">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Generate Users</p>
+            </a>
+          </li>
+          <li>
+            <a href="<?=$app->url('admin-board/users/new')?>">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Create User</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

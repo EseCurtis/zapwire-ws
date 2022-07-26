@@ -1,4 +1,4 @@
-import { Zapwire } from './zapwire.js'
+import { Zapwire } from 'http://localhost/zapwire/cdn/zapwire-js/v1.0.0.js';
 
 let zw = new Zapwire()
 

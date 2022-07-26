@@ -185,4 +185,13 @@
         }
         return false;
     }
+
+    function get_vault_file($file_name){
+        $file_path = _PATH_."/vault/".$file_name;
+        
+        if(file_exists($file_path)){
+            return file_get_contents($file_path);
+        }
+        return false;
+    }
 ?>

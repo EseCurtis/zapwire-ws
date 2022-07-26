@@ -11,9 +11,10 @@
 
         $subject = req_var("subject");
         $content = req_var("content");
+        $user_id = $user->get_loggedin_user()['id'];
 
         $report = new Report();
-        $report_status = $report->send($subject, $content);
+        $report_status = $report->send($subject, $content, $user_id);
 
         if($report_status) {
             $response->message("11");

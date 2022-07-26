@@ -15,7 +15,7 @@
 
     if($token_data){
         
-        $user->activate($token_data['user_id']);
+        $activation = $user->activate($token_data['user_id']);
         
         $auth_link->delete_auth_link_by_id($token_data['id']);
         $current_user = $user->fetch_by_id($token_data['user_id']);
@@ -24,8 +24,11 @@
         $_SESSION["password"] = $current_user['password'];
         $_SESSION["user_id"] = $current_user["id"];
 
-        $render->view('auth/activation_success');
-       
+        if($activation) {
+            $render->view('auth/activation_success');
+        } else {
+            $render->view('auth/activation_failed');
+        }
     } else {
         $render->view('auth/activation_failed');
     }

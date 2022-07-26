@@ -11,19 +11,23 @@
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Activation Successful🔒</h4>
-              <p class="mb-4">You can proceed to Login</p>
+              <h4 class="mb-2">Account Disabled.</h4>
+              <p class="mb-4">You can contact our technical support</p>
               
               <div class="text-center">
-                <a href="<?=$app->url('sign-in')?>" class="d-flex align-items-center justify-content-center">
+                <a href="<?=$app->url('technical-support')?>" class="d-flex align-items-center justify-content-center">
                   <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
-                  Proceed to Login
+                  Technical Support
                 </a>
               </div>
+              <!-- logout -->
+                <div class="text-center">
+                    <a href="<?=$app->url('logout')?>" class="d-flex align-items-center justify-content-center">
+                    <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
+                    Logout
+                    </a>
+
+                </div>
             </div>
           </div>
           <!-- /Forgot Password -->
-
-          <?php
-            session_destroy();
-          ?>

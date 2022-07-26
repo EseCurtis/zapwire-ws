@@ -1,6 +1,6 @@
 <?php
     class User {
-        function create($email, $password) {
+        function create($email, $password, $darkmode = 0, $activated = 0) {
             global $app;
 
             if(!$this->isEmail($email)) {
@@ -23,9 +23,25 @@
                 return "E001";
             }
 
-            $create_query = mysqli_query($app->_db_, "INSERT INTO `zw_users` (`id`, `email`, `password`, `avatar`, `deactivated`, `is_activated`, `have_logged_in`, `darkmode`) VALUES (NULL, '$email', '$password', '$user_avatar', 1, 0, 0, 0)");
+            $create_query = mysqli_query($app->_db_, "INSERT INTO `zw_users` (`id`, `email`, `password`, `avatar`, `deactivated`, `is_activated`, `have_logged_in`, `darkmode`) VALUES (NULL, '$email', '$password', '$user_avatar', 1, '$activated', 0, '$darkmode')");
 
             if($create_query){
+                return 1;
+            }
+
+            return 0;
+        }
+
+        function update($id, $field, $value) {
+            //convert id to int
+            $id = intval($id);
+            global $app;
+
+            
+
+            $update_query = mysqli_query($app->_db_, "UPDATE `zw_users` SET `$field`= '$value' WHERE `id`=$id");
+            
+            if($update_query){
                 return 1;
             }
 
@@ -108,7 +124,7 @@
 
         function get_loggedin_user () {
             if(!$_SESSION){
-                session_start();
+                @session_start();
             }
 
             if(isset($_SESSION['email']) && isset($_SESSION['password'])){
@@ -260,7 +276,7 @@
         function activate($id) {
             global $app;
 
-            $activate_query = mysqli_query($app->_db_, "UPDATE `zw_users` SET `is_activated`='1' WHERE `id`='$id'");
+            $activate_query = mysqli_query($app->_db_, "UPDATE `zw_users` SET `is_activated`='1' , `deactivated`='0' WHERE `id`='$id'");
 
             if($activate_query){
                 return 1;
@@ -310,6 +326,19 @@
 
             $sendgrid_mail = new SendGrid_Mail();
             $response = $sendgrid_mail->send($app->project_info['noreply_email'], $user_email, 'Account Activation.', $mail, 'text/html', 'Zapwire');
+
+            return $response;
+        }
+
+        //send welcome email
+        function send_welcome_email($user_email, $user_password) {
+            global $app;
+
+            $render = new Render('', 'php');
+            $mail   =  $render->template('welcome', ['user_password' => $user_password, 'user_email' => $user_email]);
+
+            $sendgrid_mail = new SendGrid_Mail();
+            $response = $sendgrid_mail->send($app->project_info['noreply_email'], $user_email, 'Welcome to Zapwire.', $mail, 'text/html', 'Zapwire');
 
             return $response;
         }
@@ -470,7 +499,7 @@
             $user_name = $user_name[0];
         
             $render = new Render('', 'php');
-            $mail   =  $render->template("message", ['username' => $user_name, 'user_email' => $user_email, $content => $content]);
+            $mail   =  $render->template("text", ['username' => $user_name, 'user_email' => $user_email, 'content' => $content, 'subject' => $subject]);
 
             $sendgrid_mail = new SendGrid_Mail();
             return $sendgrid_mail->send($app->project_info['noreply_email'], $user_email, $subject , $mail, 'text/html', $from);

@@ -108,6 +108,13 @@ $darkmode_class = $darkmode_status ? "darkmode" : "";
             </a>
           </li>
 
+          <li class="menu-item <?= $_data['current_page'] == 'rprt' ? 'active' : '' ?>">
+            <a async="true" href="<?= $app->url('dashboard/report') ?>" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-bell"></i>
+              <div data-i18n="Analytics">Send Report</div>
+            </a>
+          </li>
+
           <li class="menu-header small text-uppercase"><span class="menu-header-text">Channel Management</span></li>
             
           <li class="menu-item <?= $_data['current_page'] == 'channels' ? 'active' : '' ?>">
@@ -182,7 +189,7 @@ $darkmode_class = $darkmode_status ? "darkmode" : "";
                   <?php endforeach; ?>
                   <?php
                     if(!$report->get_unread_messages()){
-                      echo '<li class="nav-link"><a async="true" href="javascript:void(0)" class="nav-item dropdown-item">No new Messages</a></li>';
+                      echo '<li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">No new Messages</a></li>';
                     }
                   ?>
                 </ul>

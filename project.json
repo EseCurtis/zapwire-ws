@@ -6,16 +6,17 @@
 
   "project_info": {
     "logo_src": "/src/assets/images/z5.png",
-    "logos" : {
-      "z1" : "/src/assets/images/z1.png",
-      "z2" : "/src/assets/images/z2.png",
-      "z3" : "/src/assets/images/z3.png",
-      "z4" : "/src/assets/images/z4.png",
-      "z5" : "/src/assets/images/z5.png",
-      "z6" : "/src/assets/images/z6.png"
+    "logos": {
+      "z1": "/src/assets/images/z1.png",
+      "z2": "/src/assets/images/z2.png",
+      "z3": "/src/assets/images/z3.png",
+      "z4": "/src/assets/images/z4.png",
+      "z5": "/src/assets/images/z5.png",
+      "z6": "/src/assets/images/z6.png"
     },
     "favicon_src": "/src/assets/images/zapwire_favicon.png",
-    "cdn_url" : "http://$|_HOSTNAME_|$/zapwire",
+    "cdn_url": "http://$|_HOSTNAME_|$/zapwire",
+    "socket_server": "ws://localhost:8080",
     "author": "Ese curtis",
     "version": "1.0.0",
     "app_name": "zapwire-ws",
@@ -25,7 +26,8 @@
     "api-authKey": "e5g7E7Y8w5",
     "support_email": "support@zapwire.esecurtis.com",
     "noreply_email": "no-reply@zapwire.esecurtis.com",
-    "activation_link_request_due_time": "1",
+    "activation_link_request_due_time": "0.01",
+    "mode": "development",
     "visible": [
       "app_name",
       "description",
@@ -60,6 +62,9 @@
         },
         "messages": {
           "source": "/dashboard/messages.php"
+        },
+        "report": {
+          "source": "dashboard/report.php"
         },
         "manage-channels": {
           "source": "/dashboard/manage_channels.php",
@@ -115,6 +120,9 @@
         "activation-notice": {
           "source": "auth/activation_notice.php"
         },
+        "disabled-notice": {
+          "source": "auth/disabled_notice.php"
+        },
         "logout": {
           "source": "/dashboard/logout.php"
         }
@@ -132,7 +140,7 @@
         }
       ],
       "source": "/admin/home.php",
-      "views" : {
+      "views": {
         "home": {
           "source": "/admin/home.php"
         },
@@ -145,6 +153,14 @@
             },
             "permissions": {
               "source": "/admin/users/permissions.php",
+              "not_path": true
+            },
+            "generate": {
+              "source": "/admin/users/generate.php",
+              "not_path": true
+            },
+            "new": {
+              "source": "/admin/users/new.php",
               "not_path": true
             }
           }
@@ -180,6 +196,11 @@
     },
     "test": {
       "source": "test.php"
+    },
+    "cdn": {
+      "source": "cdn.php",
+      "not_path": true,
+      "content-type": "application/javascript"
     }
   },
   "live_channels": {

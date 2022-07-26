@@ -6,6 +6,23 @@ const formHandler = (resp) => {
     let path = resp.route;
 
     switch(path) {
+        case 'user/report': 
+            if (respCode === '11') {
+                salert('Report sent!', 'success')
+                setTimeout(() => {
+                    window.location.href = amvcPageData.siteUrl+'/dashboard'
+                }, 2000);
+            } else {
+                switch(respCode) {
+                    case '0':
+                        salert('Please fill out the form', 'error')
+                        break;
+                    case '1':
+                        salert('Sorry, Server Error encounterd try again.', 'error')
+                        break;
+                }
+            }
+            break;
         case 'channel/create':
             if (respCode === '11') {
                 salert('Channel created successfully', 'success')
@@ -84,6 +101,29 @@ const formHandler = (resp) => {
 
                 }
             }
+            break;
+
+        case 'settings/deactivate_account':
+            if (respCode === '11') {
+                salert('Account deactivated successfully', 'success')
+                setTimeout(() => {
+                    window.location.href = amvcPageData.siteUrl+'/dashboard'
+                }, 2000);
+            } else {
+                switch(respCode) {
+                    case '10':
+                        salert('Not authorized', 'error')
+                        break;
+                    case '0':
+                        salert('Please fill out the form', 'error')
+                        break;
+                    case '1':
+                        salert('Sorry, Server Error encounterd try again.', 'error')
+                        break;
+                }
+            }
+            break;
+            
 
     }
 }

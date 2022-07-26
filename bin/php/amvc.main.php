@@ -173,6 +173,11 @@
             }
 
             $this->matched_view = (array) $this->view_inheritance;
+
+            if(@!$this->matched_view["content-type"]){
+                $this->matched_view["content-type"] = "text/html";
+            }
+           
         }
 
         function check_auth () {
@@ -213,12 +218,14 @@
         //to execute proccessed info
         function run()
         {
-
-            //execute all neccessary functions
+             //execute all neccessary functions
             $this->check_matched();
             $this->check_reserved();
-            $this->insert_js();
-            $this->insert_css();
+
+            if(@$this->matched_view["content-type"] == "text/html") {
+                $this->insert_js();
+                $this->insert_css();
+            } 
 
             if(@$this->matched_view['source'] == ""){
                 $this->matched_view = (array) $this->views["404"];
@@ -232,10 +239,6 @@
             ]);
 
             $load_view->execute();
-
-            if(@!$this->matched_view["content-type"]) {
-                $this->matched_view["content-type"] = "text/html";
-            }
 
             if($this->controller_type !== "reserved" && @$this->matched_view["content-type"] == "text/html"){
                 $this->import_onloaded();

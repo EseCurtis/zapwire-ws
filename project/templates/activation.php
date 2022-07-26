@@ -2,7 +2,7 @@
     global $app;
 
     $token = $_data['token'];
-    $username = str_split($_data['user_email'], strrpos($_data['user_email'], '@'));
+    $username = str_split($_data['user_email'], strrpos($_data['user_email'], '@'))[0];
     $account_activation_url = $app->url('activation?a_tkn='.$token);
     $app_title = $app->project_info['title'];
 

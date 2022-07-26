@@ -3,8 +3,13 @@
     $render = new Render("admin", "php");
     $page = new Render("pages/", "php");
     $widget = new Render("widgets/", "php");
+    $report = new Report();
 
     $report_id = req_var("r_id");
+
+    if($report_id) {
+        $report->read($_data['r_id']);
+    }
 
     $widget->prop("auth");
 

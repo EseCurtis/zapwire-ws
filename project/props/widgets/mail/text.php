@@ -75,13 +75,7 @@
                                       mso-line-height-alt: 16.8px;
                                     "
                                   >
-                                    <p style="margin: 0; margin-bottom: 16px">
-                                      Hi Ese,
-                                    </p>
-                                    <p style="margin: 0">
-                                      Please reset your password by clicking the
-                                      link below.
-                                    </p>
+                                    <?=$_data['value']?>
                                   </div>
                                 </td>
                               </tr>

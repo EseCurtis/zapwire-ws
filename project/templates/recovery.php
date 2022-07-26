@@ -2,7 +2,7 @@
     global $app;
 
     $token = $_data['token'];
-    $username = str_split($_data['user_email'], strrpos($_data['user_email'], '@'));
+    $username = str_split($_data['user_email'], strrpos($_data['user_email'], '@'))[0];
     $password_reset_url = $app->url('password-reset?r_tkn='.$token);
 
     $render = new Render('', 'php');

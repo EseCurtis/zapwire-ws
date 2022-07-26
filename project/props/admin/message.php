@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-        <script>
+        <script reload="yes">
             const addUserId = () => {
                 let user_id = document.getElementById("user_id").value;
                 let user_ids = document.getElementById("user_ids");

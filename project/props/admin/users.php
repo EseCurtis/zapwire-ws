@@ -13,6 +13,10 @@
                   <table class="table tablesorter " id="">
                     <thead class=" text-primary">
                       <tr>
+                        <!-- id -->
+                        <th>
+                          ID
+                        </th>
                         <th>
                           Email
                         </th>
@@ -35,6 +39,9 @@
                         
                         <tr>
                             <td>
+                                <?=$current_user['id']; ?>
+                            </td>
+                            <td>
                             <?= $current_user["email"]; ?>
                             </td>
                             <td>
@@ -48,14 +55,8 @@
                             </td>
                             <td class="text-center">
                                 
-                                <a href="<?= $app->url('admin/users/permissions/'.$current_user["id"]); ?>" class="btn btn-warning">
+                                <a href="<?= $app->url('admin-board/users/permissions/'.$current_user["id"]); ?>" class="btn btn-warning">
                                     <i class="material-icons">Permissions</i>
-                                </a>
-                                <a href="<?= $app->url('admin/users/update/'.$current_user["id"]); ?>" class="btn btn-info">
-                                    <i class="material-icons">Update</i>
-                                </a>
-                                <a data-user-id="<?=$current_user["id"]?>" class="btn btn-danger">
-                                    <i class="material-icons">Deactivate</i>
                                 </a>
                             </td>
                         </tr>

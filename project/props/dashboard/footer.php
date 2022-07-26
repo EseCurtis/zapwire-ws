@@ -43,17 +43,16 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+    <script src="<?=$app->url('src/')?>assets/vendor/js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <!-- bootstra cdns -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <!-- perfect-scrollbar cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/perfect-scrollbar/1.4.0/perfect-scrollbar.min.js"></script>
     <script reload="yes" src="<?=$app->url('src/')?>assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
-
-
+    <!-- Vendors JS -->
+    <script src="<?=$app->url('src/')?>assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
     <!-- Main JS -->
     <script reload="yes" src="<?=$app->url('src/')?>assets/js/main2.js"></script>
